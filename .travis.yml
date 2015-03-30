@@ -43,6 +43,7 @@ install:
   - pip install coveralls
   - sh -e /etc/init.d/xvfb start
 script:
+  isort -c -rc -vb django_select2
   coverage run --source=django_select2 runtests.py
 after_success:
   coveralls
